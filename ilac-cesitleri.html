@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egemen İlaçlama - Ev ilaçlama nasıl yapılır? Kullandığımız Sağlık Bakanlığı onaylı ilaç çeşitleri ve profesyonel uygulama tekniklerimiz.">
+    <title>İlaçlama Rehberi ve Çeşitlerimiz | Egemen İlaçlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --text: #333; --light: #f4f7f6; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: white; color: var(--text); line-height: 1.6; }
+
+        /* Navigasyon */
+        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo img { height: 60px; }
+        .nav-links { list-style:none; display:flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        /* Sayfa Başlığı */
+        .page-header { 
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; padding: 70px 8%; color: white; text-align: center;
+        }
+
+        /* Bilgi Alanı */
+        .content-section { padding: 60px 8%; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--main); font-size: 2.2rem; }
+        .section-title div { width: 80px; height: 4px; background: var(--accent); margin: 15px auto; }
+
+        /* 4'lü İlaç Kartları */
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 50px; }
+        .drug-card { background: var(--light); border-radius: 15px; padding: 30px 20px; text-align: center; transition: 0.3s; border-bottom: 4px solid transparent; }
+        .drug-card:hover { transform: translateY(-10px); border-color: var(--accent); background: white; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .drug-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        .drug-card h3 { color: var(--main); margin-bottom: 12px; font-size: 1.2rem; }
+        .drug-card p { font-size: 0.9rem; color: #666; }
+
+        /* Süreç Bölümü (Yeni Zengin İçerik) */
+        .process-box { background: #f9f9f9; padding: 50px 8%; border-radius: 30px; margin: 40px 0; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+        .process-step { position: relative; padding-left: 60px; }
+        .process-step .number { 
+            position: absolute; left: 0; top: 0; width: 45px; height: 45px; 
+            background: var(--main); color: white; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;
+        }
+        .process-step h4 { color: var(--main); margin-bottom: 10px; }
+        .process-step p { font-size: 0.95rem; color: #555; }
+
+        /* Mobil Uyumluluk */
+        @media (max-width: 1200px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .grid-4 { grid-template-columns: 1fr; } .nav-links { display: none; } }
+
+        footer { background: var(--main); color: white; padding: 30px; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="anasayfa.html" class="logo"><img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama"></a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html" class="active">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html">Haşere Çeşitleri</a></li>
+            <li><a href="teknikler.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Ev İlaçlama ve Ürün Teknolojilerimiz</h1>
+        <p>Doğru Teşhis, Profesyonel Uygulama ve Sağlık Bakanlığı Onaylı Ürünler</p>
+    </div>
+
+    <section class="content-section">
+        <div class="section-title">
+            <h2>Kullandığımız Biyosidal Ürünler</h2>
+            <div></div>
+            <p style="max-width: 800px; margin: 0 auto; color: #666;">Ev ilaçlaması sadece kimyasal sıkmak değildir; haşere türüne göre bilimsel bir mücadele yöntemidir.</p>
+        </div>
+
+        <div class="grid-4">
+            <div class="drug-card">
+                <i class="fas fa-vial"></i>
+                <h3>Kokusuz Sıvı İlaçlar</h3>
+                <p>Su bazlıdır, leke ve koku yapmaz. Günlük hayatı aksatmadan, yürüyen haşereler için bariyer oluşturur.</p>
+            </div>
+            <div class="drug-card">
+                <i class="fas fa-syringe"></i>
+                <h3>Jel Yem Teknolojisi</h3>
+                <p>Hamam böceği ve karınca mücadelesinde en güvenli yoldur. Evin mutfak gibi hassas alanlarında mutfaktaki gıdalara zarar vermeden uygulanır.</p>
+            </div>
+            <div class="drug-card">
+                <i class="fas fa-box-open"></i>
+                <h3>Güvenli İstasyonlar</h3>
+                <p>Fare mücadelesinde kilitli üniteler kullanılır. Hedef dışı canlıların (çocuk, evcil hayvan) ilaca ulaşması engellenir.</p>
+            </div>
+            <div class="drug-card">
+                <i class="fas fa-cloud"></i>
+                <h3>Larvasit Uygulaması</h3>
+                <p>Üreme odaklarına (durgun sular, rögarlar) yapılan bu uygulama, haşerenin henüz larva aşamasındayken yok edilmesini sağlar.</p>
+            </div>
+        </div>
+
+        <div class="process-box">
+            <div class="section-title">
+                <h2 style="font-size: 1.8rem;">İlaçlama Süreci Nasıl İşler?</h2>
+                <div style="background: var(--main);"></div>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="number">1</div>
+                    <h4>Tür Teşhisi</h4>
+                    <p>Evinizi istila eden haşere türü profesyonel ekiplerimizce tespit edilir. Çünkü her böceğin biyolojisi ve direnci farklıdır.</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">2</div>
+                    <h4>Yöntem Seçimi</h4>
+                    <p>Haşerenin yoğunluğuna ve evin yapısına göre; jel, sprey veya istasyon gibi en etkili yöntem belirlenir.</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">3</div>
+                    <h4>Güvenli Uygulama</h4>
+                    <p>Sağlık Bakanlığı onaylı biyosidal ürünler, Dünya Sağlık Örgütü (WHO) standartlarında uzman personelce uygulanır.</p>
+                </div>
+                <div class="process-step">
+                    <div class="number">4</div>
+                    <h4>Takip ve Kontrol</h4>
+                    <p>İlaçlama sonrası süreç takip edilir. Özellikle fare gibi toplu yaşayan zararlılarda aktivite kontrolü hayati önem taşır.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; background: #fff5f5; padding: 30px; border-radius: 15px; border: 1px dashed #e74c3c;">
+            <h3 style="color: #c0392b;"><i class="fas fa-exclamation-circle"></i> Önemli Hatırlatma</h3>
+            <p style="color: #555; margin-top: 10px;">Ev ilaçlaması sonrası temizlik, ilaçlanan haşere türüne göre değişir. Örneğin; hamam böceği ilaçlamasında kalıcı etkinin sürmesi için bir süre genel temizlik önerilmezken, pire ilaçlamasında ölü yumurtalar için özel vakumlama önerilir. <b>Ekiplerimiz uygulama sonrası size özel direktifleri verecektir.</b></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Egemen İlaçlama | Sertifikalı & Bilimsel Pest Kontrol</p>
+    </footer>
+
+</body>
+</html>

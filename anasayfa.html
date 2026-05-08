@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egemen İlaçlama - Edremit Körfezi, Çanakkale ve Balıkesir geneli profesyonel haşere kontrol ve ilaçlama hizmetleri. 7/24 Kesintisiz hizmet.">
+    <title>Egemen İlaçlama | Profesyonel Haşere Kontrolü</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --text: #333; --light: #f4f7f6; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+
+        /* Üst Bilgi Çubuğu */
+        .top-bar { background: var(--main); color: white; padding: 8px 8%; display: flex; justify-content: space-between; font-size: 0.85rem; }
+        .top-bar a { color: white; text-decoration: none; margin-left: 15px; transition: 0.3s; }
+        .top-bar a:hover { color: var(--accent); }
+
+        /* Navigasyon */
+        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo img { height: 65px; transition: 0.3s; }
+        .nav-links { list-style:none; display:flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        
+        /* Ana Banner */
+        .hero { 
+            height: 80vh; 
+            background: linear-gradient(rgba(0,51,102,0.65), rgba(0,51,102,0.65)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: white; text-align: center; padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); margin-bottom: 15px; }
+        .hero p { font-size: 1.4rem; font-weight: 300; max-width: 800px; margin-bottom: 30px; }
+
+        /* Keşif Butonu (WhatsApp Entegrasyonlu) */
+        .btn-kesif { 
+            background: var(--accent); 
+            color: white; 
+            padding: 18px 45px; 
+            border-radius: 50px; 
+            font-size: 1.2rem; 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4);
+        }
+        .btn-kesif:hover { transform: translateY(-3px); background: #2ecc71; box-shadow: 0 15px 30px rgba(39, 174, 96, 0.6); }
+
+        /* Bölge Akışı */
+        .region-section { padding: 80px 8%; text-align: center; background: white; }
+        .region-section h2 { color: var(--main); margin-bottom: 30px; font-size: 2.2rem; position: relative; padding-bottom: 15px; }
+        .region-section h2::after { content:''; width: 80px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .region-flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 40px; }
+        .region-item { background: #f8fafb; padding: 12px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: var(--main); border: 1px solid #dee2e6; transition: 0.3s; }
+        .region-item:hover { background: var(--main); color: white; border-color: var(--main); transform: scale(1.05); }
+
+        /* Video Bandı */
+        .video-band { padding: 80px 8%; background: rgba(0, 51, 102, 0.03); text-align: center; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        .video-item { border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); background: white; border: 5px solid white; }
+        .video-item iframe { width: 100%; height: 220px; border: none; display: block; }
+
+        /* Footer */
+        footer { background: var(--main); color: white; padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
+        .foot-col h3 { color: var(--accent); margin-bottom: 25px; font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 15px; }
+        .foot-col p { font-size: 0.95rem; margin-bottom: 12px; opacity: 0.85; display: flex; align-items: center; gap: 10px; }
+        .foot-links a { color: white; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
+        .foot-links a:hover { color: var(--accent); padding-left: 5px; }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.4rem; }
+            .hero p { font-size: 1.1rem; }
+            .top-bar { flex-direction: column; text-align: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div><i class="fas fa-shield-alt"></i> %100 Garantili İlaçlama Hizmeti</div>
+        <div>
+            <a href="tel:05368144068"><i class="fas fa-phone-alt"></i> 0536 814 40 68</a>
+            <a href="tel:05469238010"><i class="fas fa-phone-alt"></i> 0546 923 80 10</a>
+        </div>
+    </div>
+
+    <nav>
+        <a href="anasayfa.html" class="logo"><img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama"></a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html" style="color: var(--accent)">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html">Haşere Çeşitleri</a></li>
+            <li><a href="teknikler.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Sağlıklı Yaşam Alanları Oluşturuyoruz</h1>
+        <p>Sağlık Bakanlığı Onaylı Ürünler ve Profesyonel Ekibimizle Edremit Körfezi'nin Hizmetindeyiz.</p>
+        <a href="https://wa.me/905469238010?text=Merhaba,%20ücretsiz%20keşif%20talebinde%20bulunmak%20istiyorum." class="btn-kesif" target="_blank">
+            <i class="fab fa-whatsapp"></i> ÜCRETSİZ KEŞİF TALEBİ
+        </a>
+    </header>
+
+    <section class="region-section">
+        <h2>Hizmet Ağımız</h2>
+        <p style="color:#666;">Kuzeyden Güneye Tüm Noktalarda Profesyonel Çözümler</p>
+        <div class="region-flow">
+            <span class="region-item">Bozcaada</span> <span class="region-item">Gökçeada</span> 
+            <span class="region-item">Çanakkale</span> <span class="region-item">Ayvacık</span> 
+            <span class="region-item">Küçükkuyu</span> <span class="region-item">Altınoluk</span> 
+            <span class="region-item">Güre</span> <span class="region-item">Akçay</span> 
+            <span class="region-item">Edremit</span> <span class="region-item">Havran</span> 
+            <span class="region-item">İvrindi</span> <span class="region-item">Balıkesir</span> 
+            <span class="region-item">Burhaniye</span> <span class="region-item">Ören</span> 
+            <span class="region-item">İskele</span> <span class="region-item">Pelitköy</span> 
+            <span class="region-item">Karaağaç</span> <span class="region-item">Gömeç</span> 
+            <span class="region-item">Ayvalık</span> <span class="region-item">Sarımsaklı</span> 
+            <span class="region-item">Altınova</span>
+        </div>
+    </section>
+
+    <section class="video-band">
+        <h2 style="color:var(--main)">Uygulama Videolarımız</h2>
+        <p style="color:#666; margin-bottom: 20px;">Sizin İçin Profesyonelce Çalışıyoruz</p>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Uygulama 1"></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Uygulama 2"></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Uygulama 3"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot-col">
+            <img src="https://i.ibb.co/VYkhtgmG/logo.png" style="height:60px; margin-bottom:20px; filter: brightness(0) invert(1);">
+            <p>Egemen İlaçlama, Edremit Körfezi'nde haşere kontrolünde güvenin adresidir. Sertifikalı uzman kadromuzla yanınızdayız.</p>
+        </div>
+        <div class="foot-col foot-links">
+            <h3>Hızlı Erişim</h3>
+            <a href="anasayfa.html">Ana Sayfa</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+        <div class="foot-col">
+            <h3>İletişim Bilgileri</h3>
+            <p><i class="fas fa-phone-alt" style="color:var(--accent)"></i> 0536 814 40 68</p>
+            <p><i class="fas fa-phone-alt" style="color:var(--accent)"></i> 0546 923 80 10</p>
+            <p><i class="fas fa-envelope" style="color:var(--accent)"></i> info@egemenilaclama.com</p>
+            <p><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> Edremit / Balıkesir</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egemen İlaçlama - Ev, iş yeri ve endüstriyel alanlarda profesyonel, sertifikalı haşere kontrol çözümleri.">
+    <title>Hizmetlerimiz | Egemen İlaçlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --text: #333; --light: #f4f7f6; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+
+        /* Navigasyon */
+        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo img { height: 60px; }
+        .nav-links { list-style:none; display:flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        /* Header */
+        .page-header { 
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center; padding: 60px 8%; color: white; text-align: center;
+        }
+
+        /* 4'lü Grid Sistemi */
+        .services-grid { 
+            padding: 50px 8%; 
+            display: grid; 
+            /* Burası kritik: Ekran genişse tam 4 kolon yapar */
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+        }
+        
+        .s-card { 
+            background: white; 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            text-align: center; 
+            transition: 0.3s; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .s-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .s-card i { font-size: 2.8rem; color: var(--accent); margin-bottom: 15px; }
+        .s-card h3 { color: var(--main); margin-bottom: 10px; font-size: 1.15rem; font-weight: 700; }
+        .s-card p { color: #666; font-size: 0.85rem; line-height: 1.4; }
+
+        /* Mobil ve Tablet Uyumu */
+        @media (max-width: 1200px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { 
+            .services-grid { grid-template-columns: 1fr; } 
+            .nav-links { display: none; }
+        }
+
+        footer { background: var(--main); color: white; padding: 25px; text-align: center; font-size: 0.85rem; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="anasayfa.html" class="logo"><img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama"></a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html" class="active">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html">Haşere Çeşitleri</a></li>
+            <li><a href="teknikler.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Profesyonel Hizmetlerimiz</h1>
+        <p>Sağlık Bakanlığı Onaylı, 20 Yıllık Tecrübe İle Kesin Çözüm</p>
+    </div>
+
+    <section class="services-grid">
+        <div class="s-card">
+            <i class="fas fa-home"></i>
+            <h3>Ev & Villa</h3>
+            <p>Yaşam alanlarınızda haşerelere yer yok. Kokusuz ve güvenli uygulamalar.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-hotel"></i>
+            <h3>Otel & Pansiyon</h3>
+            <p>Müşteri memnuniyeti için periyodik ve sertifikalı koruma hizmeti.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-utensils"></i>
+            <h3>Restoran & Kafe</h3>
+            <p>Gıda güvenliği standartlarında, hamam böceği ve kemirgen kontrolü.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-university"></i>
+            <h3>Yurt & Okullar</h3>
+            <p>Toplu yaşam alanlarında öğrencilerin sağlığı için üst düzey hijyen.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-seedling"></i>
+            <h3>Bahçe & Peyzaj</h3>
+            <p>Kene, akrep ve dış mekan zararlılarına karşı mevsimsel ilaçlama.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-warehouse"></i>
+            <h3>Fabrika & Depo</h3>
+            <p>Endüstriyel alanlar için kurumsal çözümler ve düzenli raporlama.</p>
+        </div>
+
+        <div class="s-card">
+            <i class="fas fa-virus-slash"></i>
+            <h3>Dezenfeksiyon</h3>
+            <p>Virüs ve bakterilere karşı Sağlık Bakanlığı onaylı sterilizasyon.</p>
+        </div>
+
+        <div class="s-card" style="background: var(--accent);">
+            <i class="fas fa-phone-alt" style="color: white;"></i>
+            <h3 style="color: white;">Ücretsiz Keşif</h3>
+            <p style="color: white;">Körfez genelinde ücretsiz analiz için hemen bizi arayın.</p>
+            <a href="tel:05469238010" style="margin-top:10px; color:white; font-weight:bold; text-decoration:underline;">0546 923 80 10</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Egemen İlaçlama | Güvenilir ve Sertifikalı Haşere Kontrolü</p>
+    </footer>
+
+</body>
+</html>

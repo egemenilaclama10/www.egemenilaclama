@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Egemen İlaçlama - 20 yılı aşkın tecrübemizle Edremit Körfezi'nde Sağlık Bakanlığı onaylı profesyonel haşere kontrol hizmetleri sunuyoruz.">
+    <title>Hakkımızda | Egemen İlaçlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --text: #333; --light: #f4f7f6; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: white; color: var(--text); line-height: 1.6; }
+
+        /* Üst Bilgi Çubuğu */
+        .top-bar { background: var(--main); color: white; padding: 8px 8%; display: flex; justify-content: space-between; font-size: 0.85rem; }
+        .top-bar a { color: white; text-decoration: none; margin-left: 15px; }
+
+        /* Navigasyon */
+        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .logo img { height: 60px; }
+        .nav-links { list-style:none; display:flex; }
+        .nav-links li { margin-left: 20px; }
+        .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        /* Sayfa Başlığı */
+        .page-header { 
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover; background-position: center;
+            padding: 80px 8%; color: white; text-align: center;
+        }
+
+        /* Hakkımızda İçerik */
+        .about-section { padding: 80px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        
+        /* Resim Alanı Düzenlemesi */
+        .about-image { position: relative; }
+        .about-image img { 
+            width: 100%; 
+            border-radius: 20px; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            display: block; /* Resmin görünmesini garantiler */
+            min-height: 400px;
+            object-fit: cover;
+        }
+        
+        .about-text h2 { color: var(--main); font-size: 2.5rem; margin-bottom: 25px; line-height: 1.2; }
+        .about-text p { margin-bottom: 20px; color: #444; font-size: 1.1rem; text-align: justify; }
+        
+        .highlight { color: var(--accent); font-weight: 700; }
+
+        /* Sertifika Kutusu */
+        .cert-box { 
+            background: #f0f9f4; padding: 30px; border-radius: 20px; 
+            border-right: 5px solid var(--accent); margin-top: 35px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+        }
+        .cert-box i { color: var(--accent); font-size: 2.5rem; margin-bottom: 15px; }
+        .cert-box h3 { color: var(--main); margin-bottom: 10px; }
+
+        @media (max-width: 992px) {
+            .about-section { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div><i class="fas fa-check-circle"></i> T.C. Sağlık Bakanlığı Onaylı Kurumsal Çözümler</div>
+        <div>
+            <a href="tel:05368144068"><i class="fas fa-phone-alt"></i> 0536 814 40 68</a>
+            <a href="tel:05469238010"><i class="fas fa-phone-alt"></i> 0546 923 80 10</a>
+        </div>
+    </div>
+
+    <nav>
+        <a href="anasayfa.html" class="logo"><img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama"></a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html">Haşere Çeşitleri</a></li>
+            <li><a href="teknikler.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Kurumsal Kimliğimiz</h1>
+        <p>Geleceğe Sağlıklı ve Hijyenik Adımlarla İlerliyoruz</p>
+    </div>
+
+    <section class="about-section">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80" alt="Egemen İlaçlama Uzman Ekip">
+        </div>
+        <div class="about-text">
+            <h2><span class="highlight">20 Yıllık</span> Köklü Tecrübe ve Sektörel Güven</h2>
+            <p>Egemen İlaçlama olarak, <span class="highlight">çeyrek asra yaklaşan saha tecrübemizle</span> Edremit Körfezi'nin her noktasında yaşam alanlarınızı koruma altına alıyoruz. Geleneksel dürüstlük anlayışımızı, modern teknoloji ve bilimsel yöntemlerle harmanlayarak bölgenin en güvenilir ilaçlama markası olmanın gururunu yaşıyoruz.</p>
+            <p>Sadece bir ilaçlama firması değil, sağlığınızın nöbetçisiyiz. Edremit'ten Ayvalık'a, Çanakkale'den Balıkesir'e uzanan geniş hizmet ağımızda, her bir müşterimize aynı özen ve titizlikle yaklaşıyoruz.</p>
+            
+            <div class="cert-box">
+                <i class="fas fa-shield-virus"></i>
+                <h3>Sertifikalı Güvence Altındasınız</h3>
+                <p>Uygulamalarımızın tamamı <b>T.C. Sağlık Bakanlığı onaylıdır.</b> Sertifikalı uzman kadromuz, insan sağlığına ve doğaya zarar vermeyen, dünya standartlarında biyosidal ürünler kullanarak kesin çözüm sunar.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; padding: 20px; background: var(--main); color: white; font-size: 0.9rem;">
+            © 2026 Egemen İlaçlama - Tüm Hakları Saklıdır.
+        </p>
+    </footer>
+
+</body>
+</html>

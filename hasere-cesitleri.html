@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haşere Çeşitleri | Egemen İlaçlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --text: #333; --light: #f4f7f6; --danger: #e74c3c; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: var(--text); }
+
+        /* NAVİGASYON - TÜM SAYFALARDA STANDART */
+        nav { background: white; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-weight: 700; color: var(--main); text-decoration: none; font-size: 1.4rem; letter-spacing: -0.5px; }
+        .nav-links { list-style:none; display:flex; gap: 15px; }
+        .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+        .page-header { 
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.pexels.com/photos/4047145/pexels-photo-4047145.jpeg?auto=compress&cs=tinysrgb&w=1200');
+            background-size: cover; background-position: center; padding: 50px 8%; color: white; text-align: center;
+        }
+
+        /* GRID VE KARTLAR */
+        .pest-grid { padding: 40px 5%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .pest-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; transition: 0.3s; }
+        .pest-card:hover { transform: translateY(-5px); }
+
+        /* GÖRSEL SIĞDIRMA AYARI */
+        .pest-img-box { width: 100%; height: 180px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 10px; }
+        .pest-img { max-width: 100%; max-height: 100%; object-fit: contain; } /* KESMEYİ ENGELLER */
+        
+        .pest-info { padding: 15px; flex-grow: 1; text-align: center; }
+        .pest-info h3 { color: var(--main); margin-bottom: 8px; font-size: 1rem; font-weight: 700; }
+        .pest-info p { font-size: 0.8rem; color: #666; line-height: 1.4; }
+        .risk-tag { font-size: 0.6rem; font-weight: 700; color: var(--danger); text-transform: uppercase; margin-bottom: 5px; display: block; }
+
+        .whatsapp-card { background: var(--accent); color: white; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .whatsapp-btn { background: white; color: var(--accent); padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: 700; margin-top: 12px; font-size: 0.8rem; }
+
+        @media (max-width: 1200px) { .pest-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 700px) { .nav-links { display: none; } .pest-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="anasayfa.html" class="logo">EGEMEN İLAÇLAMA</a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html" class="active">Haşere Çeşitleri</a></li>
+            <li><a href="ilaclama-teknikleri.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <h1>Zararlı Türleri Rehberi</h1>
+        <p>Edremit Körfezi'nin en yaygın zararlılarını tanıyın, profesyonel çözüm bulun.</p>
+    </div>
+
+    <section class="pest-grid">
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://entofarma.com/wp-content/uploads/2019/06/alman-hamam-bocegi-ve-mucadelesi.jpg.webp" alt="Hamam Böceği" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Yüksek Risk</span>
+                <h3>Hamam Böcekleri</h3>
+                <p>Hastalık taşıyıcıdırlar, mutfak ve banyolarda hızlı ürerler.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.ilaclamantalya.com/wp-content/uploads/2025/01/resim-34.png" alt="Tahtakurusu" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Zor Mücadele</span>
+                <h3>Tahtakuruları</h3>
+                <p>Kan emerek beslenir, mobilya ve yatak aralarında gizlenirler.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.ilaclamantalya.com/wp-content/uploads/2017/06/Fare-1024x682.jpg" alt="Fare" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Kemirgen Riski</span>
+                <h3>Kemirgenler (Fare)</h3>
+                <p>Kabloları kemirir ve gıdaları kontamine ederler.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.chrysamed.com/wp-content/uploads/pire.jpg" alt="Pire" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Alerjik Etki</span>
+                <h3>Pire ve Parazitler</h3>
+                <p>Kaşıntı ve deri enfeksiyonlarına sebep olan istilacılardır.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.ziraatilaclama.com/wp-content/uploads/karinca-800x533.jpg" alt="Karınca" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">İstilacı Tür</span>
+                <h3>Karıncalar</h3>
+                <p>Gıdalara hızla ulaşan ve koloni kuran yaygın zararlılardır.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.kentekrani.com/wp-content/uploads/2024/05/IMG-20240513-WA0010-1024x960.jpg" alt="Akrep" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Zehirli Risk</span>
+                <h3>Akrep ve Örümcekler</h3>
+                <p>Taşlık ve bahçeli alanlarda ciddi sağlık riski oluştururlar.</p>
+            </div>
+        </div>
+
+        <div class="pest-card">
+            <div class="pest-img-box">
+                <img src="https://www.fidasilaclama.com.tr/admin/vendor/assets/img/uploads/blogs/07042022101230-gümüs.jpg" alt="Gümüş Böceği" class="pest-img">
+            </div>
+            <div class="pest-info">
+                <span class="risk-tag">Nem Zararlısı</span>
+                <h3>Gümüş Böcekleri</h3>
+                <p>Nemli alanlarda kağıt ve tekstil ürünlerine zarar verirler.</p>
+            </div>
+        </div>
+
+        <div class="whatsapp-card">
+            <i class="fas fa-camera" style="font-size: 2.2rem; margin-bottom: 8px;"></i>
+            <h3 style="font-size: 0.95rem;">Fotoğraf Gönderin</h3>
+            <p style="font-size: 0.75rem;">Zararlıyı tanıyamadınız mı? Bize WhatsApp'tan atın.</p>
+            <a href="https://wa.me/905368144068" class="whatsapp-btn">WHATSAPP DESTEK</a>
+        </div>
+    </section>
+
+    <footer style="background:var(--main); color:white; padding:30px; text-align:center; font-size:0.8rem;">
+        <p>© 2026 Egemen İlaçlama | 0536 814 40 68 | Edremit - Balıkesir</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Egemen İlaçlama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --main: #003366; --accent: #27ae60; --light: #f4f7f6; }
+        * { margin:0; padding:0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); }
+        
+        /* NAVIGASYON MENÜSÜ - GERİ GELDİ */
+        nav { 
+            background: white; 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-anasayfa: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .logo { font-family: 'Montserrat'; font-size: 1.5rem; font-weight: 700; color: var(--main); text-decoration: none; }
+        .logo span { color: var(--accent); }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--main); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+        /* TELEFON BANNER */
+        .phone-banner { background: var(--accent); color: white; text-align: center; padding: 12px; font-size: 1.3rem; font-weight: 700; }
+
+        /* ANA İÇERİK YAPISI */
+        .contact-hero { padding: 40px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1400px; margin: auto; }
+        
+        .image-side { border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .image-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .content-side { display: flex; flex-direction: column; gap: 20px; justify-content: center; }
+        
+        /* AKSİYON KARTLARI */
+        .action-card { 
+            background: white; padding: 30px; border-radius: 25px; border-left: 8px solid #25d366;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+        .action-card h3 { color: var(--main); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-family: 'Montserrat'; }
+        .action-card p { font-size: 0.95rem; color: #666; margin-bottom: 15px; }
+
+        .btn-wa { 
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; 
+            text-decoration: none; font-weight: 700; transition: 0.3s; width: 100%;
+        }
+        .btn-wa:hover { background: #1ebe57; transform: scale(1.02); }
+
+        /* BÖLGELER BANDI */
+        .region-strip { background: var(--main); padding: 50px 5%; color: white; text-align: center; }
+        .region-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1200px; margin: 25px auto 0; }
+        .tag { background: rgba(255,255,255,0.1); padding: 8px 18px; border-radius: 25px; font-size: 0.85rem; border: 1px solid var(--accent); }
+
+        @media (max-width: 900px) { 
+            .contact-hero { grid-template-columns: 1fr; } 
+            .nav-links { display: none; } /* Mobil için menü gizleme veya burger menü eklenebilir */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="anasayfa.html" class="logo">EGEMEN <span>İLAÇLAMA</span></a>
+        <ul class="nav-links">
+            <li><a href="anasayfa.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+            <li><a href="ilac-cesitleri.html">İlaç Çeşitleri</a></li>
+            <li><a href="hasere-cesitleri.html">Haşere Çeşitleri</a></li>
+            <li><a href="ilaclama-teknikleri.html">İlaçlama Teknikleri</a></li>
+            <li><a href="iletisim.html" class="active">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <div class="phone-banner">
+        <i class="fas fa-phone-alt"></i> 0536 814 40 68
+    </div>
+
+    <div class="contact-hero">
+        <div class="image-side">
+            <img src="egemen.jpg" alt="Egemen İlaçlama Profesyonel Hizmet">
+        </div>
+
+        <div class="content-side">
+            <div class="action-card">
+                <h3><i class="fas fa-camera" style="color:#25d366"></i> Fotoğraf Gönder, Teşhis Al</h3>
+                <p>Haşerenin fotoğrafını çekip bize gönderin, neyle karşı karşıya olduğunuzu anında belirleyelim ve en uygun çözümü sunalım.</p>
+                <a href="https://wa.me/905368144068" class="btn-wa">
+                    <i class="fab fa-whatsapp"></i> ŞİMDİ FOTOĞRAF GÖNDER
+                </a>
+            </div>
+
+            <div class="action-card" style="border-left-color: var(--main);">
+                <h3><i class="fas fa-map-marker-alt" style="color:var(--main)"></i> Hızlı Müdahale İçin Konum Paylaş</h3>
+                <p>Size en yakın ekibimizi yönlendirmemiz için tek tuşla konumunuzu paylaşabilirsiniz.</p>
+                <a href="https://wa.me/905368144068" class="btn-wa" style="background: var(--main);">
+                    <i class="fas fa-location-arrow"></i> KONUM PAYLAŞ
+                </a>
+            </div>
+            
+            <div style="text-align: center;">
+                <p style="font-weight: 600; color: var(--main); margin-bottom: 10px;">Sosyal Medyada Biz</p>
+                <a href="https://www.instagram.com/_egemenilaclama_?igsh=MWFjODR5YWw2cDZ3ag==" target="_blank" style="color: #E1306C; font-size: 2.2rem; text-decoration: none;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="region-strip">
+        <h2 style="font-family: 'Montserrat';">Kuzeyden Güneye Hizmet Ağımız</h2>
+        <div class="region-grid">
+            <span class="tag">Gökçeada</span> <span class="tag">Bozcaada</span> <span class="tag">Çanakkale</span>
+            <span class="tag">Ezine</span> <span class="tag">Ayvacık</span> <span class="tag">Asos</span>
+            <span class="tag">Küçükkuyu</span> <span class="tag">Altınoluk</span> <span class="tag">Güre</span>
+            <span class="tag">Akçay</span> <span class="tag">Zeytinli</span> <span class="tag">Edremit</span>
+            <span class="tag">Havran</span> <span class="tag">Burhaniye</span> <span class="tag">Pelitköy</span>
+            <span class="tag">Karaağaç</span> <span class="tag">Gömeç</span> <span class="tag">Ayvalık</span>
+            <span class="tag">Cunda</span> <span class="tag">Sarımsaklı</span> <span class="tag">Dikili</span>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 30px; color: #666; background: white; border-top: 1px solid #eee;">
+        <p>© 2026 Egemen İlaçlama | 7/24 Teknik Destek & Acil Müdahale</p>
+    </footer>
+
+</body>
+</html>

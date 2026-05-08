@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Egemen İlaçlama | Giriş</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; font-family: 'Poppins', sans-serif; }
+        
+        /* İstediğin o ev ortamı arka planı */
+        .room-bg {
+            position: fixed; width: 100%; height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center; z-anasayfa: -1;
+        }
+
+        #bugCanvas { position: fixed; top: 0; left: 0; z-anasayfa: 10; pointer-events: none; }
+
+        .overlay { 
+            position: relative; height: 100vh; display: flex; 
+            flex-direction: column; justify-content: center; 
+            align-items: center; z-anasayfa: 20; text-align: center; 
+        }
+
+        /* Buzlu cam efektli aksiyon kutusu */
+        .action-box { 
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(15px); 
+            padding: 50px; 
+            border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.3); 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6); 
+        }
+
+        .title { 
+            color: #ff4757; 
+            font-size: 2.8rem; 
+            font-weight: 800; 
+            margin-bottom: 25px; 
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.7); 
+        }
+
+        .btn-spray { 
+            background: #27ae60; 
+            color: white; 
+            border: none; 
+            padding: 22px 55px; 
+            font-size: 1.6rem; 
+            font-weight: bold; 
+            border-radius: 60px; 
+            cursor: pointer; 
+            transition: 0.4s; 
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.5); 
+        }
+
+        .btn-spray:hover { transform: scale(1.05); background: #2ecc71; }
+
+        /* İlaçlama dumanı efekti */
+        #smoke { 
+            position: fixed; width: 100%; height: 100%; 
+            background: rgba(255,255,255,0.85); 
+            opacity: 0; z-anasayfa: 100; 
+            pointer-events: none; 
+            transition: opacity 0.6s ease; 
+        }
+
+        #final-logo { 
+            position: fixed; top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            z-anasayfa: 150; display: none; 
+            text-align: center; 
+        }
+
+        /* Yeni logonun büyük hali */
+        .logo-large { 
+            width: 320px; 
+            margin-bottom: 20px; 
+            animation: scaleIn 0.8s ease-out; 
+        }
+
+        @keyframes scaleIn { from { transform: scale(0); } to { transform: scale(1); } }
+    </style>
+</head>
+<body>
+    <div class="room-bg"></div>
+    <div id="smoke"></div>
+    
+    <div id="final-logo">
+        <img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama" class="logo-large"><br>
+        <h1 style="font-size: 3rem; font-weight: 800; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">HİJYEN SAĞLANDI</h1>
+    </div>
+
+    <canvas id="bugCanvas"></canvas>
+
+    <div class="overlay">
+        <div class="action-box" id="ui">
+            <div class="title">EVİNİZ İSTİLA ALTINDA!</div>
+            <button class="btn-spray" onclick="startSpraying()">
+                <i class="fas fa-biohazard"></i> EGEMEN İLAÇLAMAYI ÇAĞIR
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('bugCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; 
+        canvas.height = window.innerHeight;
+
+        let bugs = [];
+        class Bug {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 2;
+                this.speedX = (Math.random() - 0.5) * 8;
+                this.speedY = (Math.random() - 0.5) * 8;
+                this.dead = false;
+                this.rot = 0;
+            }
+            update() {
+                if(!this.dead) {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if(this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if(this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                } else {
+                    this.y += 15; // Ölen haşereler yere düşer
+                    this.rot += 0.4;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rot);
+                ctx.fillStyle = this.dead ? "#333" : "#000";
+                ctx.beginPath();
+                ctx.ellipse(0, 0, this.size, this.size*1.6, 0, 0, Math.PI*2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // 80 adet haşere oluştur
+        for(let i=0; i<80; i++) bugs.push(new Bug());
+
+        function animate() {
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            bugs.forEach(b => {
+                b.update();
+                b.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        function startSpraying() {
+            document.getElementById('smoke').style.opacity = "1";
+            document.getElementById('ui').style.display = "none";
+            
+            setTimeout(() => { 
+                bugs.forEach(b => b.dead = true); 
+                document.getElementById('smoke').style.opacity = "0";
+                document.getElementById('final-logo').style.display = "block";
+            }, 800);
+
+            // 3.5 saniye sonra ana sayfaya yönlendir
+            setTimeout(() => { window.location.href = "anasayfa.html"; }, 3500);
+        }
+    </script>
+</body>
+</html>
