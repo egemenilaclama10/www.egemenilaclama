@@ -18,13 +18,16 @@
         .top-bar a:hover { color: var(--accent); }
 
         /* Navigasyon */
-        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-anasayfa: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        nav { background: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top:0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         .logo img { height: 65px; transition: 0.3s; }
         .nav-links { list-style:none; display:flex; }
         .nav-links li { margin-left: 20px; }
         .nav-links a { text-decoration:none; color: var(--main); font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
         
+        /* Mobil Menü Butonu (Varsayılan olarak gizli) */
+        .menu-toggle { display: none; cursor: pointer; font-size: 1.5rem; color: var(--main); }
+
         /* Ana Banner */
         .hero { 
             height: 80vh; 
@@ -37,24 +40,15 @@
         .hero h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); margin-bottom: 15px; }
         .hero p { font-size: 1.4rem; font-weight: 300; max-width: 800px; margin-bottom: 30px; }
 
-        /* Keşif Butonu (WhatsApp Entegrasyonlu) */
+        /* Keşif Butonu */
         .btn-kesif { 
-            background: var(--accent); 
-            color: white; 
-            padding: 18px 45px; 
-            border-radius: 50px; 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            text-decoration: none; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4);
+            background: var(--accent); color: white; padding: 18px 45px; border-radius: 50px; 
+            font-size: 1.2rem; font-weight: 700; text-decoration: none; display: inline-flex; 
+            align-items: center; gap: 10px; transition: 0.4s; box-shadow: 0 10px 20px rgba(39, 174, 96, 0.4);
         }
         .btn-kesif:hover { transform: translateY(-3px); background: #2ecc71; box-shadow: 0 15px 30px rgba(39, 174, 96, 0.6); }
 
-        /* Bölge Akışı */
+        /* Hizmet Ağı ve Videolar */
         .region-section { padding: 80px 8%; text-align: center; background: white; }
         .region-section h2 { color: var(--main); margin-bottom: 30px; font-size: 2.2rem; position: relative; padding-bottom: 15px; }
         .region-section h2::after { content:''; width: 80px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
@@ -62,7 +56,6 @@
         .region-item { background: #f8fafb; padding: 12px 20px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; color: var(--main); border: 1px solid #dee2e6; transition: 0.3s; }
         .region-item:hover { background: var(--main); color: white; border-color: var(--main); transform: scale(1.05); }
 
-        /* Video Bandı */
         .video-band { padding: 80px 8%; background: rgba(0, 51, 102, 0.03); text-align: center; }
         .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
         .video-item { border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); background: white; border: 5px solid white; }
@@ -75,8 +68,24 @@
         .foot-links a { color: white; text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
         .foot-links a:hover { color: var(--accent); padding-left: 5px; }
 
+        /* MOBİL UYUMLULUK AYARLARI */
         @media (max-width: 992px) {
-            .nav-links { display: none; }
+            .menu-toggle { display: block; } /* Butonu göster */
+            .nav-links { 
+                display: none; /* Menüyü gizle */
+                flex-direction: column; 
+                position: absolute; 
+                top: 85px; 
+                left: 0; 
+                width: 100%; 
+                background: white; 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 20px 0;
+                text-align: center;
+                z-index: 999;
+            }
+            .nav-links.active { display: flex; } /* Tıklandığında göster */
+            .nav-links li { margin: 15px 0; }
             .hero h1 { font-size: 2.4rem; }
             .hero p { font-size: 1.1rem; }
             .top-bar { flex-direction: column; text-align: center; gap: 10px; }
@@ -95,7 +104,12 @@
 
     <nav>
         <a href="anasayfa.html" class="logo"><img src="https://i.ibb.co/VYkhtgmG/logo.png" alt="Egemen İlaçlama"></a>
-        <ul class="nav-links">
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="anasayfa.html" style="color: var(--accent)">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
             <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
@@ -168,6 +182,13 @@
             <p><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> Edremit / Balıkesir</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
